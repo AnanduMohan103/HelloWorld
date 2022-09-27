@@ -14,8 +14,8 @@ public class Hotel {
             System.out.println("1.Tea 10$");
             System.out.println("2.Shakes 60$");
             System.out.println("3.Cake 250$");
-            System.out.println("4.Fresh juice 25$");
-            System.out.println("5.Ice cream 45$");
+            System.out.println("4.Freshjuice 25$");
+            System.out.println("5.Icecream 45$");
             System.out.println("6.Bill");
             System.out.println("7.Exit");
             choice = s.nextInt();
