@@ -1,5 +1,7 @@
 package com.nest.Bill;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Bill {
@@ -7,7 +9,8 @@ public class Bill {
         int quantity, price, choice, total = 0;
         FoodItems fd = new FoodItems(20, 45, 60, 30, 35);
         FoodItems twfd = new FoodItems(25, 50, 65, 35, 40);
-        
+        HashMap<String, String> map = new HashMap<String, String>();
+        ArrayList<String> tl = new ArrayList<>();
 
         int opt, c1, c2;
         Scanner s = new Scanner(System.in);
@@ -15,6 +18,7 @@ public class Bill {
             System.out.println("Choose your Wish");
             System.out.println("1.Dining");
             System.out.println("2.Takeaway");
+            System.out.println("3.View Transcation");
             opt = s.nextInt();
 
 
@@ -55,8 +59,14 @@ public class Bill {
                             int e = s.nextInt();
                             total = (fd.getIcecream() * e) + total;
                         case 6:
+                            System.out.println("Enter the customer name");
+                            String name = s.next();
+                            map.put("customer Name", name);
+                            map.put("mode","dinning");
+                            map.put("Amount", String.valueOf(total));
+                            tl.add(String.valueOf(map));
                             System.out.println("Total Bill=" + total);
-                            total=0;
+                            total = 0;
                             break;
                         case 7:
                             System.exit(0);
@@ -104,17 +114,26 @@ public class Bill {
                             int e = s.nextInt();
                             total = (twfd.getIcecream() * e) + total;
                         case 6:
+                            System.out.println("Enter the customer name");
+                            String name = s.next();
+                            map.put("customer Name", name);
+                            map.put("mode","takeaway");
+                            map.put("Amount", String.valueOf(total));
+                            tl.add(String.valueOf(map));
                             System.out.println("Total Bill=" + total);
-                            total=0;
+                            total = 0;
                             break;
                         case 7:
                             System.exit(0);
                             break;
                         default:
                             System.out.println("***Invalid input***");
-                    }
-            }
 
+                    }
+                case 3:
+                    System.out.println(tl);
+
+            }
         }
     }
 }
