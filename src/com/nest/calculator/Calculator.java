@@ -33,9 +33,13 @@ public class Calculator {
                     System.out.println("Answer="+m);
                     break;
                 case 4:
-                    System.out.println("Division selected");
-                    d=p/q;
-                    System.out.println("Answer="+d);
+                    try {
+                        System.out.println("Division selected");
+                        d = p / q;
+                        System.out.println("Answer=" + d);
+                    }catch(Exception e){
+                        System.out.println("Dividing by zero is not possible");
+                    }
                     break;
                 case 5:
                     System.exit(0);
